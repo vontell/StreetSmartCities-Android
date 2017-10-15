@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="8dp">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="124dp">
+
+        <LinearLayout
+            android:id="@+id/task_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/task_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Broken stop light"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/task_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:text="I've noticed that this has been a problem for a while; any tips?"
+                android:textColor="#FFFFFF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/star" />
+
+                <TextView
+                    android:id="@+id/fav_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="243 faves" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/awesome_card"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:alpha="0"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/colorPrimary">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <com.like.LikeButton
+                    android:id="@+id/star_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:icon_size="32dp"
+                    app:icon_type="star" />
+
+                <com.like.LikeButton
+                    android:id="@+id/heart_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    app:icon_size="32dp"
+                    app:icon_type="heart" />
+
+                <com.like.LikeButton
+                    android:id="@+id/twitter_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:like_drawable="@drawable/twitter_enabled"
+                    app:unlike_drawable="@drawable/twitter_enabled"
+                    android:layout_gravity="center"
+                    app:icon_size="32dp"
+                    app:icon_type="thumb" />
+
+                <com.like.LikeButton
+                    android:id="@+id/trello_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:like_drawable="@drawable/trello"
+                    app:unlike_drawable="@drawable/trello"
+                    android:layout_gravity="center"
+                    app:icon_size="32dp"
+                    app:icon_type="thumb" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

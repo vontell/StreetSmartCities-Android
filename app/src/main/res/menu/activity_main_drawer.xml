@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_tasks"
+            android:icon="@drawable/ic_check"
+            android:title="Tasks" />
+        <item
+            android:id="@+id/nav_chat"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Chat" />
+        <item
+            android:id="@+id/nav_data"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="SmartData" />
+        <item
+            android:id="@+id/nav_map"
+            android:icon="@drawable/ic_map"
+            android:title="SmartMap" />
+    </group>
+
+</menu>
