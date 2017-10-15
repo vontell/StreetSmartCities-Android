@@ -124,7 +124,7 @@ public class TaskActivity extends AppCompatActivity {
                     public void onClick(View view) {
 
                         TweetComposer.Builder builder = new TweetComposer.Builder(context)
-                                .text(t.title + " - " + t.description + "@Cityofatlanta @stsmartcity");
+                                .text(t.title + " - " + t.description + " @Cityofatlanta @stsmartcity");
                         builder.show();
 
                     }

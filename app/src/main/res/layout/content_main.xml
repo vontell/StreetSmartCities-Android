@@ -18,8 +18,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:padding="10dp">
+            android:layout_alignParentBottom="true">
 
             <LinearLayout
                 android:id="@+id/linearLayout"
@@ -38,7 +37,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="45.6"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@android:color/holo_orange_light"
                     android:textSize="48sp"
                     android:textStyle="bold" />
 
@@ -49,7 +48,7 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:text="12.6"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/greeny"
                     android:textSize="48sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -59,6 +58,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"
                 android:text="Welcome, Aaron Vontell!"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />
@@ -107,8 +110,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="10dp">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/textView5"
@@ -117,6 +119,10 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:paddingBottom="8dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"
                 android:text="City Feed"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp" />

@@ -39,6 +39,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
@@ -183,6 +184,28 @@ public class MapActivity extends AppCompatActivity {
                 markers.add(m);
             }
 
+            // Now also put in the device markers
+            try {
+                JSONObject thingy = Constants.getAnalysis();
+                Iterator<String> keys = thingy.keys();
+                while (keys.hasNext()) {
+                    String asset = keys.next();
+                    JSONObject obj = thingy.getJSONObject(asset);
+                    String type = obj.getString("desc");
+                    double lat = Double.parseDouble(obj.getString("lat"));
+                    double lng = Double.parseDouble(obj.getString("lng"));
+                    Marker m = mapGlobal.addMarker(new MarkerOptions()
+                            .position(new LatLng(lat, lng))
+                            .userData(asset + "::::" + type)
+                            .labelText(type)
+                    );
+                    Log.e("DATA", m.getPosition().latitude + " " + m.getPosition().longitude);
+                    markers.add(m);
+                }
+            } catch (Exception e) {
+                Log.e("FAIL", e.toString());
+            }
+
         }
     }
 
@@ -215,7 +238,7 @@ public class MapActivity extends AppCompatActivity {
                         @UiThread
                         @Override
                         public void ready(PickResult pickResult) {
-                            Toast.makeText(MapActivity.this, String.format("Picked map feature: %s", pickResult.mapFeatureType.name()), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(MapActivity.this, String.format("Picked map feature: %s", pickResult.mapFeatureType.name()), Toast.LENGTH_SHORT).show();
 
                             if (pickResult.mapFeatureType == MapFeatureType.Building) {
 

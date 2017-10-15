@@ -15,9 +15,11 @@
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animation_view"
+            android:layout_marginTop="64dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:lottie_fileName="hello-world.json"
+            app:lottie_fileName="tasksloader.json"
+            app:lottie_scale="2"
             app:lottie_loop="true"
             app:lottie_autoPlay="true" />
 

@@ -21,6 +21,7 @@ public class ServerPortal {
     private static final String CITY = "api/city/";
     private static final String USER = "api/user/";
     private static final String TASK = "api/tasks/";
+    private static final String DATA = "api/data/";
 
     public static JSONObject getCityInfo(String city) {
         try {
@@ -55,6 +56,20 @@ public class ServerPortal {
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
                     .url(HOST + TASK)
+                    .build();
+            Response response = client.newCall(request).execute();
+            return new JSONArray(response.body().string());
+        } catch (IOException exception) {}
+        catch (JSONException exception) {}
+
+        return new JSONArray();
+    }
+
+    public static JSONArray getData() {
+        try {
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder()
+                    .url(HOST + DATA)
                     .build();
             Response response = client.newCall(request).execute();
             return new JSONArray(response.body().string());

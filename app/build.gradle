@@ -24,15 +24,16 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    compile('com.github.ozodrukh:CircularReveal:2.0.1@aar') {
+        transitive = true;
+    }
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support:design:26.+'
     compile 'com.android.support:cardview-v7:26.+'
     compile 'com.wrld:wrld-android-sdk:0.0.496@aar'
     compile 'com.airbnb.android:lottie:2.1.0'
     compile 'com.github.jd-alexander:LikeButton:0.2.3'
-    compile ('com.github.ozodrukh:CircularReveal:2.0.1@aar') {
-        transitive = true;
-    }
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
     compile 'com.twitter.sdk.android:twitter:3.1.1'
     compile 'com.squareup.okhttp3:okhttp:3.9.0'
     compile 'com.squareup.picasso:picasso:2.5.2'

@@ -1,12 +1,14 @@
 package org.vontech.monet;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.CheckableImageButton;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -124,6 +126,20 @@ public class MainActivity extends AppCompatActivity
         cityScoreView = (TextView) findViewById(R.id.city_score);
         userScoreView = (TextView) findViewById(R.id.user_score);
 
+        cityScoreView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCityScore();
+            }
+        });
+
+        userScoreView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showUserScore();
+            }
+        });
+
         new InformationTask().execute();
 
     }
@@ -172,6 +188,10 @@ public class MainActivity extends AppCompatActivity
                 Intent mapActivity = new Intent(this, MapActivity.class);
                 startActivity(mapActivity);
                 break;
+            case R.id.nav_data:
+                Intent dataActivity = new Intent(this, DataActivity.class);
+                startActivity(dataActivity);
+                break;
             case R.id.nav_tasks:
                 Intent taskActivity = new Intent(this, TaskActivity.class);
                 startActivity(taskActivity);
@@ -185,6 +205,35 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void showCityScore() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("City SmartScore");
+        builder.setMessage("The City SmartScore is a custom metric used to determine how well a given city uses technology for it\'s people." +
+                " Factors that affect it include:\n\t - Number of IoT devices\n\t - Accuracy of devices\n\t - Number of participating citizens");
+        builder.setPositiveButton("Thanks!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.create().show();
+    }
+
+    private void showUserScore() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Your SmartScore");
+        builder.setMessage("Your SmartScore is a custom metric used to determine how well you contribute to your city." +
+                " Factors that affect it include:\n\t - Number of logged tasks\n\t - Social media presence\n\t - In-app impressions" +
+                "\nMake sure to raise your score by working as a team through the task system!");
+        builder.setPositiveButton("Thanks!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.create().show();
     }
 
     @Override
