@@ -1,5 +1,7 @@
 # StreetSmart Cities
 
+<a href="https://www.buymeacoffee.com/SYwZPjK4F" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/black_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
 ![alt text](https://github.com/vontell/StreetSmartCities-Android/blob/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
 (See [Devpost](https://devpost.com/software/streetsmartcities-android) for updates and screenshots.)
 
